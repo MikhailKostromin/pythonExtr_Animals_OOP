@@ -1,11 +1,12 @@
 class Animal:
-    def __init__(self, name, feature, element, red_book, avr_life, speed):
+    def __init__(self, name, feature, element, red_book, avr_life, speed, earth):
         self.name = name
         self.feature = feature
         self.element = element
         self.red_book = red_book
         self.avr_life = avr_life
         self.speed = speed
+        self.earth = earth
 
     def show_info(self):
         print(f'==================================================\n'
@@ -38,34 +39,29 @@ class Animal:
         elif self.avr_life < 5:
             print(f'{self.name} живет мало')
 
-    def speed(self):
-        if self.speed > 100:
-            print(f'{self.name} быстро предвигается')
-        elif 100 > self.speed > 30:
-            print(f'{self.name}  передвигается не бытро')
-        elif self.speed < 10:
-            print(f'{self.name} передвигается медленно')
+
+    def world_travel(self):
+        return print(f'Время Кругосвеетного путешествия '
+                     f'составит: {self.earth / self.speed} часов')
 
 
-
-
-eagle = Animal('Орёл', 'Крылья', 'Воздух', 'Нет', 40, 320)
+eagle = Animal('Орёл', 'Крылья', 'Воздух', 'Нет', 40, 320, 40000)
 eagle.show_info()
 eagle.definition()
 eagle.rare()
 eagle.age()
-eagle.speed()
+eagle.world_travel()
 
-whale = Animal('Гренландский кит', 'Плавники', 'Вода', 'Да', 200, 50)
+whale = Animal('Гренландский кит', 'Плавники', 'Вода', 'Да', 200, 50, 40000)
 whale.show_info()
 whale.definition()
 whale.rare()
 whale.age()
-whale.speed()
+whale.world_travel()
 
-hamster = Animal('Хомяк', 'Лапы', 'Земля', 'Нет', 3, 5)
+hamster = Animal('Хомяк', 'Лапы', 'Земля', 'Нет', 3, 5, 40000)
 hamster.show_info()
 hamster.definition()
 hamster.rare()
 hamster.age()
-hamster.speed()
+hamster.world_travel()
